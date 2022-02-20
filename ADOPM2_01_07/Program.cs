@@ -9,7 +9,7 @@ namespace ADOPM2_01_07
             public long Width { get; set; }
             public long Height { get; set; }
             public long Area1() { return Width * Height; }
-            public long Area2() => Width * Height;
+            public long Area2 => Width * Height;
             public static long Area(long Width, long Height) => Width * Height;
         }
         static void Main(string[] args)
@@ -17,7 +17,7 @@ namespace ADOPM2_01_07
             Rectangle r1 = new Rectangle { Width = 100, Height = 100 };
             Rectangle r2 = new Rectangle { Width = 200, Height = 200 };
             Console.WriteLine(r1.Area1()); // 10000
-            Console.WriteLine(r2.Area2()); // 40000
+            Console.WriteLine(r2.Area2); // 40000
             Console.WriteLine(Rectangle.Area(300, 100)); //30000
         }
     }

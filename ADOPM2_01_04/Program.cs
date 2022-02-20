@@ -12,7 +12,7 @@ namespace ADOPM2_01_04
         }
         static void Main(string[] args)
         {
-            Console.WriteLine(constVsStaticReadonly.twoPI); // 6.28... Will never change
+            Console.WriteLine(Program.constVsStaticReadonly.twoPI); // 6.28... Will never change
             Console.WriteLine(constVsStaticReadonly.staticCreationTime); // time of static staticCreationTime init
             Task.Delay(5000);                                            // Delay 5 sec   
             Console.WriteLine(constVsStaticReadonly.staticCreationTime); // Same time as above

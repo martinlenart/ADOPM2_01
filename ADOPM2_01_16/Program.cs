@@ -4,25 +4,25 @@ namespace ADOPM2_01_16
 {
     class Program
     {
-        public class Panda
+        public class Panda2
         {
             public string Name { get; init; }
-            public Panda Mate { get; set; }
+            public Panda2 BestFriend { get; set; }
 
-            public Panda(string Name) => this.Name = Name;
-            public void Marry(Panda partner)
+            public Panda2(string Name) => this.Name = Name;
+            public void Marry(Panda2 partner)
             {
-                Mate = partner;
-                partner.Mate = this;
+                BestFriend = partner;
+                partner.BestFriend = this;
             }
         }
         static void Main(string[] args)
         {
-            Panda p1 = new Panda("Bill");
-            p1.Marry(new Panda("Anne"));
+            Panda2 p1 = new Panda2("Bill");
+            p1.Marry(new Panda2("Anne"));
 
-            Console.WriteLine($"{p1.Name}'s class is of type {nameof(Panda)}"); // Bill's class is of type Panda
-            Console.WriteLine($"{p1.Name}'s {nameof(p1.Mate)} is {p1.Mate.Name}"); // Bill's Mate is Anne
+            Console.WriteLine($"{p1.Name}'s class is of type {nameof(Panda2)}"); // Bill's class is of type Panda
+            Console.WriteLine($"{p1.Name}'s {nameof(p1.BestFriend)} is {p1.BestFriend.Name}"); // Bill's Mate is Anne
         }
     }
 }

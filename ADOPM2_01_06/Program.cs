@@ -17,7 +17,7 @@ namespace ADOPM2_01_06
 				}
 			}
 
-			public decimal SharesOwned { get; set; } = 50;  // Automatic properties initialization
+			public decimal SharesOwned { get; private set; } = 50;  // Automatic properties initialization
 
 			public decimal Worth
 			{

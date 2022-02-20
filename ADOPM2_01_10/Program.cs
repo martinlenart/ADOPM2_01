@@ -13,20 +13,25 @@ namespace ADOPM2_01_10
                 Price = price; 
                 Year = default; 
             }
-            public WineStruct(decimal price, int year) : this(price) => Year = year;
+            public WineStruct(decimal price, int year)
+            {
+                Price = price;
+                Year = year;
+            }
         }
         public class WineClass
         {
             public decimal Price { get; set; } = default;
             public int Year { get; set; } = default;
 
+            public WineClass() { Price = 200; Year = 1964; }
             public WineClass(decimal price)
             {
                 Price = price;
             }
 
-            public WineClass(decimal price, int year) : this(price)
-            { 
+            public WineClass(decimal Price, int year):this(Price)
+            {
                 Year = year; 
             }
         }
@@ -50,6 +55,10 @@ namespace ADOPM2_01_10
 
             //Using Object initialization
             var ws3 = new WineStruct { Price = 250, Year = 1964 };
+  
+            var wc3 = new WineClass { Price = 250};
+            Console.WriteLine(wc3.Price);
+            Console.WriteLine(wc3.Year);
         }
     }
 
