@@ -31,7 +31,7 @@ foreach (var item in typeof(FriendLevel).GetEnumNames())
 }
 
 
-public enum FriendLevel { unknown, not_at_all, soso, kindof, good, best, final}
+public enum FriendLevel { unknown, not_at_all, soso, kindof, good, best, better_than_best, final}
 
 [Flags]
 public enum PreferedWayOfContact
@@ -53,7 +53,7 @@ public class ContactSheet
 
     public PreferedWayOfContact WayToContact { get; set; }
 
-    public override string ToString() => $"{FirstName} {LastName}, {City}, {Level}, WayToContact: {WayToContact}";
+    public override string ToString() => $"{FirstName} {LastName}, {City}, FriendLevel: {Level}, WayToContact: {WayToContact}";
 
     public static ContactSheet CreateRandom()
     {
