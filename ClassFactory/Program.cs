@@ -53,7 +53,7 @@ public class ContactSheet
 
     public PreferedWayOfContact WayToContact { get; set; }
 
-    public override string ToString() => $"{FirstName} {LastName}, {City}, {Level}, {WayToContact}";
+    public override string ToString() => $"{FirstName} {LastName}, {City}, {Level}, WayToContact: {WayToContact}";
 
     public static ContactSheet CreateRandom()
     {
