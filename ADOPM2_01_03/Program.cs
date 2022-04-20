@@ -5,8 +5,7 @@ namespace ADOPM2_01_03
     class Program
     {
         public struct valueTypePoint { public int X, Y; }
-        public class referenceTypePoint { public int X, Y; }
-
+ 
         public readonly struct immutableValueTypePoint 
         { 
             readonly public int X, Y; 
@@ -16,16 +15,24 @@ namespace ADOPM2_01_03
                 this.Y = Y;
             }
         }
-        public class immutableReferenceTypePoint 
-        {
-            readonly public int X, Y;
-            public immutableReferenceTypePoint(int X, int Y)
-            {
-                this.X = X;
-                this.Y = Y;
-            }
-        }
 
+        public class referenceTypePoint { public int X, Y; }
+        
+          public class immutableReferenceTypePoint 
+          {
+              readonly public int X, Y;
+              public immutableReferenceTypePoint(int X, int Y)
+              {
+                  this.X = X;
+                  this.Y = Y;
+              }
+            public immutableReferenceTypePoint SetX(int X, int Y)
+            {
+                var newrp = new immutableReferenceTypePoint(X, Y);
+                return newrp;
+            }
+          }
+         
         static void Main(string[] args)
         {
             var vp1 = new valueTypePoint { X = 3, Y = 5 };

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace ADOPM2_01_04
 {
@@ -10,11 +11,12 @@ namespace ADOPM2_01_04
             public const double twoPI = 2 * System.Math.PI;
             public static readonly DateTime staticCreationTime = DateTime.Now;
         }
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            Console.WriteLine(Program.constVsStaticReadonly.twoPI); // 6.28... Will never change
+            Console.WriteLine(constVsStaticReadonly.twoPI); // 6.28... Will never change
             Console.WriteLine(constVsStaticReadonly.staticCreationTime); // time of static staticCreationTime init
-            Task.Delay(5000);                                            // Delay 5 sec   
+            await Task.Delay(5000);
+            //Thread.Sleep(5000);// Delay 5 sec   
             Console.WriteLine(constVsStaticReadonly.staticCreationTime); // Same time as above
         }
     }

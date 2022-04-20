@@ -8,22 +8,36 @@ namespace ADOPM2_01_02
 		{
 			public string Name;             // Instance field
 			public static int NrInstances;  // Static field
-
-			public Apple(string n)
+			public static float Heaviest = 0;
+			public Apple(string n, float weight)
 			{
 				Name = n;                      // Assign the instance field
+
 				NrInstances = NrInstances + 1; // Increment the static field
+
+				if (weight > Heaviest)
+					Heaviest = weight;
 			}
 		}
 		static void Main(string[] args)
 		{
-			Apple a1 = new Apple("Pink Lady");
-			Apple a2 = new Apple("Discovery");
 
+			Apple a1 = new Apple("Pink Lady", 100);
+			Apple a2 = new Apple("Discovery", 135);
+
+			
 			Console.WriteLine(a1.Name);      // Pink Lady
 			Console.WriteLine(a2.Name);      // Discovery
 
-			Console.WriteLine(Apple.NrInstances);   // 2        
+			Console.WriteLine(Apple.NrInstances);   // 2
+													//
+			var rnd = new Random();
+            for (int i = 0; i < 1000; i++)
+            {
+				new Apple("Bad Apple", rnd.Next(100, 235));
+            }
+			Console.WriteLine(Apple.NrInstances);   //
+			Console.WriteLine(Apple.Heaviest);   //
 		}
 	}
 }

@@ -24,10 +24,15 @@ namespace ADOPM2_01_06
 				get => _currentPrice * SharesOwned;
 				init => SharesOwned = value / _currentPrice;  // Can only be set at initialization time
 			}
+            public Stock()
+            {
+				Worth = 5000;
+            }
 		}
 		static void Main(string[] args)
 		{
 			var stock1 = new Stock();
+
 			Console.WriteLine(stock1.Worth);         // 50
 			Console.WriteLine(stock1.SharesOwned);   // 50
 

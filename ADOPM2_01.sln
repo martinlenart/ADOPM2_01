@@ -37,6 +37,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADOPM2_01_16", "ADOPM2_01_1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADOPM2_01_12a", "ADOPM2_01_12a\ADOPM2_01_12a.csproj", "{733F5755-F691-4441-969B-143FC90511B3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chefs", "Chefs\Chefs.csproj", "{89782DA2-523E-479B-8C66-F657E05D5458}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassFactory", "ClassFactory\ClassFactory.csproj", "{C77121ED-D06C-4ED5-925B-7542B9789042}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{733F5755-F691-4441-969B-143FC90511B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{733F5755-F691-4441-969B-143FC90511B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{733F5755-F691-4441-969B-143FC90511B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89782DA2-523E-479B-8C66-F657E05D5458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89782DA2-523E-479B-8C66-F657E05D5458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89782DA2-523E-479B-8C66-F657E05D5458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89782DA2-523E-479B-8C66-F657E05D5458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C77121ED-D06C-4ED5-925B-7542B9789042}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C77121ED-D06C-4ED5-925B-7542B9789042}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C77121ED-D06C-4ED5-925B-7542B9789042}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C77121ED-D06C-4ED5-925B-7542B9789042}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

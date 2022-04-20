@@ -30,7 +30,7 @@ namespace ADOPM2_01_01
 			referenceTypePoint rp3 = new referenceTypePoint();
 
 			rp1.X = 9;                  // Change rp1.X
-
+			rp3.X = 9;
 			//Referential Equality
 			Console.WriteLine(rp1.X);  // 9
 			Console.WriteLine(rp2.X);  // 9
