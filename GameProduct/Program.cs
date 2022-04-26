@@ -28,6 +28,7 @@ namespace GameProduct // Note: actual namespace depends on the project name.
             Console.WriteLine($"Nr of Games: {games.Count()}");
             Console.ReadKey();
 
+            games.Contains(gp1);
 
             games.Sort();
             foreach (var item in games.TakeLast(20))
