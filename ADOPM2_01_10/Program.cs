@@ -8,14 +8,17 @@ namespace ADOPM2_01_10
         {
             public decimal Price { get; set; }
             public int Year { get; set; }
+
+            //New in C# 10 - parameterless constructor in struct
+            public WineStruct() { Price = 200; Year = 1964; }
+
             public WineStruct(decimal price) 
             { 
                 Price = price; 
                 Year = default; 
             }
-            public WineStruct(decimal price, int year)
+            public WineStruct(decimal price, int year) : this(price)
             {
-                Price = price;
                 Year = year;
             }
         }
@@ -46,12 +49,12 @@ namespace ADOPM2_01_10
             Console.WriteLine(ws1.Equals(ws2));                 // false
             Console.WriteLine(ws1.Equals(ws2));                 // false
             ws1.Year = 2001;
-            Console.WriteLine(ws1.Equals(ws2));                 // true
+            Console.WriteLine(ws1.Equals(ws2));                 // true  Note
 
             Console.WriteLine(wc1.Equals(wc2));                 // false
             Console.WriteLine(wc1.Equals(wc2));                 // false
             wc1.Year = 2001;
-            Console.WriteLine(wc1.Equals(wc2));                 // false
+            Console.WriteLine(wc1.Equals(wc2));                 // false Note
 
             //Using Object initialization
             var ws3 = new WineStruct { Price = 250, Year = 1964 };
@@ -63,10 +66,10 @@ namespace ADOPM2_01_10
     }
 
     //Excercises:
-    //1.    Explain the difference in the last compare ws1.Equals(ws2) vs last compare wc1.Equals(wc2)
-    //2.    Create a parameterless constructor for WineClass to set values of your choise.
-    //      Can you create one for WineStruct?
-    //3.    Add a property string Name to both WineClass and WineStruct. Modify the parameterless constructor in
+    //1.    Explain the difference in the last compare ws1.Equals(ws2) vs last compare wc1.Equals(wc2) (marked Note)
+
+    //2.    Add a property string Name to both WineClass and WineStruct. Modify the constructors in
     //      WineClass to set Name, Price and Year to your favorite wine.
-    //4.    Create an instance of your favorite wine in a variable of type WineStruct and WineClass
+
+    //3.    Create an instance of your favorite wine in a variable of type WineStruct and WineClass
 }

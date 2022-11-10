@@ -4,29 +4,36 @@ namespace ADOPM2_01_16
 {
     class Program
     {
-        public class Panda2
+        public class Panda
         {
-            public string Name { get; init; }
-            public Panda2 BestFriend { get; set; }
+            public string name { get; init; }
 
-            public Panda2(string Name) => this.Name = Name;
-            public void Marry(Panda2 partner)
+            public Panda partner { get; set; }
+
+
+            public Panda(string name)
             {
-                BestFriend = partner;
-                partner.BestFriend = this;
+                this.name = name;
+            }
+            public void Marry(Panda partner)
+            {
+                this.partner = partner;
+                partner.partner = this;
             }
         }
+
         static void Main(string[] args)
         {
-            Panda2 p1 = new Panda2("Bill");
-            p1.Marry(new Panda2("Anne"));
+            Panda p1 = new Panda ("Bill");
+            p1.Marry(new Panda("Anne"));
 
-            Console.WriteLine($"{p1.Name}'s class is of type {nameof(Panda2)}"); // Bill's class is of type Panda
-            Console.WriteLine($"{p1.Name}'s {nameof(p1.BestFriend)} is {p1.BestFriend.Name}"); // Bill's Mate is Anne
+            Console.WriteLine($"{p1.name}'s class is of type {nameof(Panda)}"); // Bill's class is of type Panda
+            Console.WriteLine($"{p1.name}'s {nameof(p1.partner)} is {p1.partner.name}"); // Bill's Mate is Anne
         }
     }
 }
 //Excercises:
-//1.    Modify class Panda to allow the property Name to be set also through object initialization.
-//      Hint. Class constructor.
-//2.    Create an instance of Panda using only object initialization
+//1.    Modify class Panda to allow an instance to be created using object initialization.
+//      Hint. default class constructor - why?
+
+//2.    Create an instances of Panda using only object initialization

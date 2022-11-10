@@ -12,6 +12,7 @@ namespace ADOPM2_01_05
 			public double Height { get; set; }
 			public abstract bool Equals(Shape s1);
 		}
+
 		// Triangle is derived from Shape.  
 		public class Triangle : Shape, IEquatable<Shape>
 		{
@@ -19,6 +20,7 @@ namespace ADOPM2_01_05
 			public override bool Equals(Shape t1) => (this.Width, base.Height) == (t1.Width, t1.Height);
 			public string myColor => color;
 		}
+
 		// Rectangle is derived from Shape
 		public class Rectangle : Shape, IEquatable<Shape>
 		{
@@ -33,8 +35,8 @@ namespace ADOPM2_01_05
 		}
 		static void Main(string[] args)
 		{
-			var r1 = new Rectangle();
-			var r2 = new Rectangle() { Height = 100, Width = 200 };
+			var r1 = new Rectangle() { Height = 100, Width = 200 };
+            var r2 = new Rectangle() { Height = 100, Width = 200 };
 			Console.WriteLine(r1.Equals(r2)); // true
 		}
 	}

@@ -9,6 +9,8 @@ namespace ADOPM2_01_13
             public long Width { get; set; }
             public long Height { get; set; }
             public long Area => Width * Height;
+
+            //Operator overloading
             public static bool operator ==(RectangleClass r1, RectangleClass r2) => (r1.Width, r1.Height) == (r2.Width, r2.Height);
             public static bool operator !=(RectangleClass r1, RectangleClass r2) => (r1.Width, r1.Height) != (r2.Width, r2.Height);
             public static RectangleClass operator +(RectangleClass r1, RectangleClass r2) => 
@@ -31,5 +33,5 @@ namespace ADOPM2_01_13
     }
 }
 //Excercises:
-//1.    Create a RectangleStruct with same functionallity as RectangleClass
+//1.    Create a RectangleStruct with same functionality as RectangleClass
 

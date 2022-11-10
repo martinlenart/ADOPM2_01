@@ -4,48 +4,32 @@ namespace ADOPM2_01_12a
 {
     class Program
     {
-		class FoldedSentence
-		{
-			string[] words = "a default sentence".Split();
-			public string Sentence
-			{
-				init => words = value.Split();
-			}
-			public int Length
-			{
-				get
-				{
-					if (words.Length % 2 == 0) return words.Length / 2;
-					return words.Length / 2 + 1;
-				}
-			}
-		
-			public (string, string) this[int idx] // indexer
-			{
-				get
-				{
-					if (idx >= Length) throw new IndexOutOfRangeException();
 
-					return (words[idx], words[words.Length - 1 - idx]);
-				}
-			}
-		}
+		class ProtectedArray
+		{
+			private int[] myArray = { 1, 2, 3, 4, 5 };
+
+            public int this[int idx] => myArray[idx];
+        }
+
+        class UnProtectedArray
+        {
+            public int[] myArray = { 1, 2, 3, 4, 5 };
+        }
+
 		static void Main(string[] args)
         {
-			var s1 = new FoldedSentence();
-			Console.WriteLine(s1.Length);   // 2
-			Console.WriteLine(s1[0]);       // (a, sentence)
-			Console.WriteLine(s1[1]);       // (default, default)
 
-			var s2 = new FoldedSentence { Sentence = "The quick brown fox catches the white rabbit" };
-			Console.WriteLine(s2.Length);   // 4
-			for (int i = 0; i < s2.Length; i++)
-			{
-				Console.WriteLine(s2[i]);   // (The, rabbit) (quick, white) (brown, the) (fox, catches)
-			}
-		}
-	}
+            var upa = new UnProtectedArray();
+            var pa = new ProtectedArray();
+
+            Console.WriteLine(upa.myArray[0]); //Will cause error
+
+            //Console.WriteLine(pa.myArray[0]); //Will cause error
+            Console.WriteLine(pa[0]); 
+        }
+    }
 }
 //Excercises:
-//1.	Modify the code so in case of odd nr of words, the "folding word" is not repeated in the index.
-//		So, in above example s1[1] should only be "default" not "default default"
+//1.	In Main try to modify the content of myArray in upa and in pa.
+//2.    In Main print out the length of myArray in upa and pa. How would you do it?

@@ -6,7 +6,7 @@ namespace ADOPM2_01_06
 	{
 		private class Stock
 		{
-			decimal _currentPrice = 1;       // private "backing" field
+			decimal _currentPrice = 1;      // private "backing" field
 			public decimal CurrentPrice     // public property
 			{
 				get => _currentPrice;
@@ -45,8 +45,10 @@ namespace ADOPM2_01_06
 	}
 }
 //Excercises:
-//1.	Can SharesOwned be initialized through object initialization? 
+//1.	Can SharesOwned be initialized through object initialization, i.e. new Stock { SharesOwned = 100 };?
+
 //2.	Make public (should it be static?) readonly members to return nr of Stocks objects created.
 //		Create a few Stocks using object initialization, and write out number of Stock instances created
+
 //3.	Modify code to write the Worth of the instance of Stock with the highest worth created. 
 

@@ -27,15 +27,12 @@ namespace ADOPM2_01_01
 			rp1.X = 7;
 
 			referenceTypePoint rp2 = rp1; // Reference copy
-			referenceTypePoint rp3 = new referenceTypePoint();
+			rp2.X = 9;                  // Change rp1.X
 
-			rp1.X = 9;                  // Change rp1.X
-			rp3.X = 9;
 			//Referential Equality
 			Console.WriteLine(rp1.X);  // 9
 			Console.WriteLine(rp2.X);  // 9
 			Console.WriteLine(rp1.Equals(rp2)); // True
-			Console.WriteLine(rp3.Equals(rp2)); // False
 		}
 	}
 }

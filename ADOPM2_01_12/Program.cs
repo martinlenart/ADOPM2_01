@@ -58,5 +58,5 @@ namespace ADOPM2_01_12
 	}
 }
 //Excercises:
-//1.	Make the WineClass and WineStruct from BOOPM3_01_10 deconstructable
+//1.	Make the WineClass and WineStruct from ADOPM2_01_10 deconstructable
 //2.    Modify RectangleStruct and RectangleClass to be immutable and deconstructable
