@@ -2,7 +2,8 @@
 
 namespace ADOPM2_01_01
 {
-    class Program
+ 
+	class Program
     {
 		public struct valueTypePoint { public int X, Y; }
 		public class referenceTypePoint { public int X, Y; }
