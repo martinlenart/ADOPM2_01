@@ -8,7 +8,8 @@ namespace ADOPM2_01_05
 		public abstract class Shape : IEquatable<Shape>
 		{
 			protected string color = "red";
-			public double Width { get; set; }
+			
+			public double Width;
 			public double Height { get; set; }
 			public abstract bool Equals(Shape s1);
 		}

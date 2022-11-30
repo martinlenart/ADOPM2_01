@@ -4,17 +4,16 @@ namespace ADOPM2_01_12a
 {
     class Program
     {
-
-		class ProtectedArray
+        class ProtectedArray
 		{
 			private int[] myArray = { 1, 2, 3, 4, 5 };
 
-            public int this[int idx] => myArray[idx];
+            public int this[int idx] { get { return myArray[idx]; } }
         }
 
         class UnProtectedArray
         {
-            public int[] myArray = { 1, 2, 3, 4, 5 };
+            public int[] myArray { get; } = { 1, 2, 3, 4, 5 };
         }
 
 		static void Main(string[] args)
@@ -23,10 +22,17 @@ namespace ADOPM2_01_12a
             var upa = new UnProtectedArray();
             var pa = new ProtectedArray();
 
-            Console.WriteLine(upa.myArray[0]); //Will cause error
+            upa.myArray[0] = 1000;
+            Console.WriteLine(upa.myArray[0]); 
+            Console.WriteLine(upa.myArray[4]);
 
-            //Console.WriteLine(pa.myArray[0]); //Will cause error
-            Console.WriteLine(pa[0]); 
+
+            pa[0] = 1000;
+            pa.myArray[0] = 1000;
+
+            Console.WriteLine(pa[0]);
+            Console.WriteLine(pa[4]);
+
         }
     }
 }

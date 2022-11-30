@@ -5,34 +5,34 @@ namespace ADOPM2_01_03
     class Program
     {
         public struct valueTypePoint { public int X, Y; }
- 
-        public readonly struct immutableValueTypePoint 
-        { 
-            readonly public int X, Y; 
+
+        public readonly struct immutableValueTypePoint
+        {
+            readonly public int X, Y;
             public immutableValueTypePoint(int X, int Y)
-            { 
+            {
                 this.X = X;
                 this.Y = Y;
             }
         }
 
         public class referenceTypePoint { public int X, Y; }
-        
-          public class immutableReferenceTypePoint 
-          {
-              readonly public int X, Y;
-              public immutableReferenceTypePoint(int X, int Y)
-              {
-                  this.X = X;
-                  this.Y = Y;
-              }
-            public immutableReferenceTypePoint SetX(int X, int Y)
+
+        public class immutableReferenceTypePoint
+        {
+            readonly public int X, Y;
+            public immutableReferenceTypePoint(int X, int Y)
             {
-                var newrp = new immutableReferenceTypePoint(X, Y);
+                this.X = X;
+                this.Y = Y;
+            }
+            public immutableReferenceTypePoint SetX(int X)
+            {
+                var newrp = new immutableReferenceTypePoint(X, this.Y);
                 return newrp;
             }
-          }
-         
+        }
+
         static void Main(string[] args)
         {
             var vp1 = new valueTypePoint { X = 3, Y = 5 };
@@ -41,15 +41,18 @@ namespace ADOPM2_01_03
             //demonstrate mutable
             vp1.X = rp1.X = 10;
             Console.WriteLine($"{nameof(vp1)}={(vp1.X, vp1.Y)}"); // I convert to tuple in printout
+            Console.WriteLine($"vp1={vp1.X}, {vp1.Y}"); // I convert to tuple in printout
             Console.WriteLine($"{nameof(rp1)}={(rp1.X, vp1.Y)}"); // I use nameof() for easy renaming
 
-            var imvp1 = new immutableValueTypePoint (X:3, Y:5); // named parameters
-            var imrp1 = new immutableReferenceTypePoint(3, 5) ; // positional parameters
+            var imvp1 = new immutableValueTypePoint(Y: 5, X: 3); // named parameters
+            var imrp1 = new immutableReferenceTypePoint(3, 5); // positional parameters
 
             //demonstrate mutable
-            //imvp1.X = imrp1.X = 10;     // Compiler error as the types are immutable
+//            imvp1.X = imrp1.X = 10;     // Compiler error as the types are immutable
             Console.WriteLine($"{nameof(imvp1)}={(imvp1.X, imvp1.Y)}");
             Console.WriteLine($"{nameof(imrp1)}={(imrp1.X, imrp1.Y)}");
+
+            imrp1 = imrp1.SetX(7);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace ADOPM2_01_02
 			{
 				Name = n;                      // Assign the instance field
 
-				NrInstances = NrInstances + 1; // Increment the static field
+				Apple.NrInstances = Apple.NrInstances + 1; // Increment the static field
 			}
 		}
 		static void Main(string[] args)

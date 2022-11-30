@@ -21,15 +21,24 @@ namespace ADOPM2_01_06
 
 			public decimal Worth
 			{
-				get => _currentPrice * SharesOwned;
-				init => SharesOwned = value / _currentPrice;  // Can only be set at initialization time
+				get => CurrentPrice * SharesOwned;
+				init => SharesOwned = value / CurrentPrice;  // Can only be set at initialization time
 			}
             public Stock()
             {
 				Worth = 5000;
             }
-		}
-		static void Main(string[] args)
+            public Stock(decimal Worth)
+            {
+                this.Worth = Worth;
+            }
+            public Stock(string Name)
+            {
+                
+            }
+
+        }
+        static void Main(string[] args)
 		{
 			var stock1 = new Stock();
 
@@ -41,8 +50,11 @@ namespace ADOPM2_01_06
 			Console.WriteLine(stock2.SharesOwned);   // 200
 
 			stock2.CurrentPrice = 3.0M;
-		}
-	}
+
+            var stock3 = new Stock("hello") { CurrentPrice = 50, Worth = 10000 }; //object initialization of public properties
+
+        }
+    }
 }
 //Excercises:
 //1.	Can SharesOwned be initialized through object initialization, i.e. new Stock { SharesOwned = 100 };?

@@ -20,7 +20,7 @@ namespace ADOPM2_01_07
                 return Width * Height;
             }
 
-            public void SetWH(long Width, long Height)
+            public void SetWH(long Width, long Height=500)
             {
                 this.Width = Width;
                 this.Height = Height;
@@ -45,10 +45,15 @@ namespace ADOPM2_01_07
             Console.WriteLine(r1.Area1()); // 10000
             Console.WriteLine(r2.Area2()); // 40000
 
+            r2.SetWH(1000, 400);
+            Console.WriteLine(r2.Area1());
+
+            /*
             Console.WriteLine(Rectangle.Area(300, 100)); //30000
 
             var r = new Rectangle();
             var r3 = Rectangle.CreateRandom();
+            */
         }
     }
  }
